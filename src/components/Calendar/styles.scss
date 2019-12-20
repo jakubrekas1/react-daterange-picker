@@ -1,0 +1,27 @@
+.calendar {
+  &__header {
+    display: grid;
+    grid-template-areas: "prev title next";
+    grid-template-columns: 50px 1fr 50px;
+  }
+
+  &__btn {
+    &-prev {
+      grid-area: prev;
+    }
+
+    &-next {
+      grid-area: next;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__day-weeks,
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

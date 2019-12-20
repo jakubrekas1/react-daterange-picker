@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar day component should renders correctly - day between selected dates 1`] = `
+<div
+  className="calendar__day calendar__day--is-between"
+  onClick={[Function]}
+>
+  7
+</div>
+`;
+
+exports[`Calendar day component should renders correctly - day from other month 1`] = `
+<div
+  className="calendar__day calendar__day--is-other-month"
+  onClick={[Function]}
+>
+  1
+</div>
+`;
+
+exports[`Calendar day component should renders correctly - is selected 1`] = `
+<div
+  className="calendar__day calendar__day--is-selected"
+  onClick={[Function]}
+>
+  12
+</div>
+`;

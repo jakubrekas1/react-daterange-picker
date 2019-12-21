@@ -10,9 +10,11 @@ const Calendar = ({
   dateEnd,
   dateStart,
   dates,
+  error,
   onDayClick,
   onNextMonthClick,
   onPrevMonthClick,
+  reservedDates,
   year,
 }) => {
   const dayWeeks = useMemo(
@@ -29,13 +31,14 @@ const Calendar = ({
         dateStart={dateStart}
         key={`${date.getDate()}_${date.getMonth()}`}
         onDayClick={onDayClick}
+        reservedDates={reservedDates}
       />
     )),
-    [currentMonth, dateEnd, dateStart, dates, onDayClick],
+    [currentMonth, dateEnd, dateStart, dates, onDayClick, reservedDates],
   );
 
   return (
-    <div>
+    <div className="calendar">
       <div className="calendar__header">
         <button
           className="calendar__btn calendar__btn--prev"
@@ -61,6 +64,11 @@ const Calendar = ({
         <div className="calendar__day-weeks">{dayWeeks}</div>
         <div className="calendar__days">{days}</div>
       </div>
+      {
+        error && (
+          <div className="calendar__error">{error}</div>
+        )
+      }
     </div>
   );
 };
@@ -69,6 +77,8 @@ Calendar.defaultProps = {
   dateEnd: null,
   dateStart: null,
   dates: [],
+  error: null,
+  reservedDates: [],
 };
 
 Calendar.propTypes = {
@@ -76,9 +86,11 @@ Calendar.propTypes = {
   dateEnd: PropTypes.instanceOf(Date),
   dateStart: PropTypes.instanceOf(Date),
   dates: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
+  error: PropTypes.string,
   onDayClick: PropTypes.func.isRequired,
   onNextMonthClick: PropTypes.func.isRequired,
   onPrevMonthClick: PropTypes.func.isRequired,
+  reservedDates: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
   year: PropTypes.number.isRequired,
 };
 

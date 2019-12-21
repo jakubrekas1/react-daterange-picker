@@ -2,7 +2,7 @@
   &__header {
     display: grid;
     grid-template-areas: "prev title next";
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: auto 1fr auto;
   }
 
   &__btn {
@@ -17,6 +17,7 @@
 
   &__title {
     grid-area: title;
+    text-align: center;
   }
 
   &__day-weeks,

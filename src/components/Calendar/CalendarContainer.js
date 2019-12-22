@@ -94,7 +94,7 @@ const CalendarContainer = ({
       setError(null);
 
       if (onChange) {
-        onChange(dateStart, dateEnd);
+        onChange({ dateStart, dateEnd });
       }
     }
   }, [dateStart, dateEnd, onChange]);
@@ -134,9 +134,9 @@ CalendarContainer.defaultProps = {
 };
 
 CalendarContainer.propTypes = {
-  defaultCurrentDate: PropTypes.instanceOf(Date),
-  defaultDateEnd: PropTypes.instanceOf(Date),
-  defaultDateStart: PropTypes.instanceOf(Date),
+  defaultCurrentDate: PropTypes.string,
+  defaultDateEnd: PropTypes.string,
+  defaultDateStart: PropTypes.string,
   onChange: PropTypes.func,
   reservedDates: PropTypes.arrayOf(PropTypes.string),
 };

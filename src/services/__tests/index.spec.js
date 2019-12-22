@@ -1,4 +1,4 @@
-import { formatDate, getCalendarPageRange, getDatesFromRange } from './index';
+import { formatDate, getCalendarPageRange, getDatesFromRange } from '../index';
 
 describe('Date format', () => {
   it('should returns 2019/01/13', () => {

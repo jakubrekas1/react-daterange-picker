@@ -2,6 +2,11 @@
   "name": "react-daterange-picker",
   "version": "0.1.0",
   "private": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -17,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./src -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src -d dist --copy-files --ignore __tests"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,7 +40,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
+    "@babel/cli": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
